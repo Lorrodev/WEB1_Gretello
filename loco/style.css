@@ -1,0 +1,94 @@
+body {
+font: 1em sans-serif;
+padding: 0;
+margin: 0;
+}
+
+.map {
+  position: sticky;
+  top: 60vh;
+  width: 500px;
+  height: 30vh;
+  background-color: hsla(226, 100.00%, 62.95%, 1.00);
+}
+
+.section {
+  overflow: hidden;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: lightgrey;
+}
+
+.section.intro {
+  background-color:lightgrey;
+  min-height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center ;
+  padding: 0;
+  margin: 0;
+}
+
+.section.place1 {
+  background-color: lightpink;
+}
+
+.section.place2 {
+  background-color: lightgreen;
+}
+.section.place3 {
+  background-color: lightskyblue;
+}
+
+.container {
+  position: relative;
+  min-height: 1200px;
+}
+
+.image {
+  position: absolute;
+  max-width: 500px;
+}
+
+.image.rechteck {
+  left: 40%;
+  top: 40%;
+  right: auto;
+  bottom: auto;
+}
+
+.image.diamant {
+  left: 30%;
+  top: 10%;
+  right: auto;
+  bottom: auto;
+}
+
+.image.quadrat {
+  left: 62%;
+  top: 42%;
+  right: auto;
+  bottom: auto;
+}
+
+.image.elipse {
+  left: 46%;
+  top: 0%;
+  right: auto;
+  bottom: auto;
+}
+
+.image.klecks {
+  left: 8%;
+  top: 20%;
+  right: auto;
+  bottom: auto;
+}
+
+.image.stern {
+  left: 73%;
+  top: 50%;
+  right: auto;
+  bottom: auto;
+}
