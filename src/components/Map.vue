@@ -23,8 +23,10 @@ export default{
 
 <style scoped>
 .map {
-    margin: 0 auto;
-    height: 40vh;
-    width: 40vw;
+    position: fixed;
+    top: 68%;
+    left: 2%;
+    height: 30%;
+    width: 30%;
 }
 </style>
