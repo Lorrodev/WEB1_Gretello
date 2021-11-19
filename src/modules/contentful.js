@@ -7,6 +7,15 @@ class Contentful {
             accessToken: 'ZZeUvfedE-fdblp7ey2t2uLW7RKcqpY9HwP3gXSopHc'
         })
     }
+
+    async getSnippets(){
+        let result = await this.client
+            .getEntries({
+                content_type: "snippet"        
+            });
+            console.log(result.items);
+            return result.items;
+    }
 }
 
 export default new Contentful();
