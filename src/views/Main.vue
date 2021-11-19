@@ -13,19 +13,23 @@
     </li>
   </div>
 
-    This is a test
-    <p id="demo"></p>
-    <button @click="testFunc">Test</button>
+  This is a test
+  <p id="demo"></p>
+  <button @click="testFunc">Test</button><br>
+  <br>
+  <Map/>
 </template>
 
 <script>
 import contentful from '@/modules/contentful.js';
-import Snippet from '@/components/Snippet.vue'
+import Snippet from '@/components/Snippet.vue';
+import Map from '@/components/Map.vue';
 
     export default {
         name: 'Main',
         components: {
-            Snippet
+            Snippet, 
+            Map
         },
         data: function(){
           return {
