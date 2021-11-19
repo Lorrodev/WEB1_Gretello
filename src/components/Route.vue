@@ -5,6 +5,8 @@
 </template>
 
 <script>
+import contentful from '@/modules/contentful.js';
+
 export default {
   name: 'Route',
   props: {
@@ -12,4 +14,6 @@ export default {
     description: String
   }
 }
+
+contentful
 </script>
