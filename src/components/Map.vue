@@ -13,7 +13,7 @@ export default{
             container: this.$refs.container,
             style: "mapbox://styles/lorrodev/ckvqvgodf4wc414mmwgv6av5z",
             center: [8.304369, 47.052349],
-            zoom: 12
+            zoom: 15
         });
     }
 }
@@ -23,7 +23,10 @@ export default{
 
 <style scoped>
 .map {
-  height: 40vh;
-  width: 100vw;
+    position: fixed;
+    top: 68%;
+    left: 2%;
+    height: 30%;
+    width: 30%;
 }
 </style>
