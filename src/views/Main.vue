@@ -4,13 +4,16 @@
   </div>
 
   <div class="mainContent">
-    <li v-for="snippet in snippets" :key="snippet.name">
+    <div v-for="snippet in snippets" :key="snippet.name">
       <Snippet  :name="snippet.fields.name" 
                 :image="snippet.fields.image"
-                :width="snippet.fields.width"
-                :height="snippet.fields.height"
+                :maxWidth="snippet.fields.maxWidth"
+                :maxHeight="snippet.fields.maxHeight"
+                :zIndex="snippet.fields.zIndex"
+                :top="snippet.fields.top"
+                :left="snippet.fields.left"
       />
-    </li>
+    </div>
   </div>
 
   This is a test
