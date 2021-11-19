@@ -4,12 +4,27 @@ padding: 0;
 margin: 0;
 }
 
+.map-container {
+  position: fixed;
+  left: 0%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+}
+
 .map {
-  position: sticky;
-  top: 60vh;
-  width: 500px;
-  height: 30vh;
+  position: absolute;
+  left: 5rem;
+  top: auto;
+  right: auto;
+  bottom: 5rem;
+  width: 30vw;
+  height: 40vh;
   background-color: hsla(226, 100.00%, 62.95%, 1.00);
+  transform: rotate(-6deg);
 }
 
 .section {
