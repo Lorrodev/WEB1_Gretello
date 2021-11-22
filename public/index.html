@@ -16,4 +16,15 @@
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>
+  <script>
+    function initScroll(){
+      const scroll = new LocomotiveScroll({
+        el: document.querySelector("[data-scroll-container]"),
+        smooth: true,
+      })
+    }
+
+    //Currently inititalizing the locomotive scroll with a timeout
+    setTimeout(initScroll, 2000);
+  </script>
 </html>

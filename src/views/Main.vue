@@ -1,18 +1,28 @@
 <template>
-  <div class="about">
-    <h1 id="testh1">Team Gretello</h1>
-  </div>
-
-  <div class="mainContent">
-    <div v-for="snippet in snippets" :key="snippet.name">
-      <Snippet  :name="snippet.fields.name" 
-                :image="snippet.fields.image"
-                :maxWidth="snippet.fields.maxWidth"
-                :maxHeight="snippet.fields.maxHeight"
-                :zIndex="snippet.fields.zIndex"
-                :top="snippet.fields.top"
-                :left="snippet.fields.left"
-      />
+  <div class="scroll-wrapper" data-scroll-container>
+    
+    <div v-for="section in sections"
+      :key="section.name"
+      class="section" data-scroll-section
+    >
+      <div  v-for="snippet in section.fields.snippets"
+            :key="snippet.name"
+            class="snippet"
+            data-scroll
+            :data-scroll-speed="snippet.fields.scrollSpeed"
+            v-bind:style="{ top: snippet.fields.top,
+                            left: snippet.fields.left,
+                            zIndex: snippet.fields.zIndex,
+                            minWidth: snippet.fields.width,
+                            minHeight: snippet.fields.height
+                        }"
+      >
+        <Snippet  :name="snippet.fields.name" 
+                  :image="snippet.fields.image"
+                  :width="snippet.fields.width"
+                  :height="snippet.fields.height"
+        />
+      </div>
     </div>
   </div>
 
@@ -31,19 +41,35 @@ import Map from '@/components/Map.vue';
     export default {
         name: 'Main',
         components: {
-            Snippet, 
+            Snippet,
             Map
         },
         data: function(){
           return {
-            snippets: []
+            sections: []
           };
         },
         created: async function(){
-          this.snippets = await contentful.getSnippets();
+          this.sections = await contentful.getSections();
         },
         methods: {
           testFunc: function(){alert("Test")}
         }
     }
 </script>
+
+<style scoped>
+.snippet{
+    position: absolute;
+    /*border: 2px solid red;
+    background-color: orange;*/
+}
+
+.section {
+  position: relative;
+  height: 100vh;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: transparent;
+}
+</style>

@@ -33,7 +33,15 @@ html, body{
   color: #42b983;
 }
 
-body{
-  background-color: #222;
+body {
+font: 1em sans-serif;
+padding: 0;
+margin: 0;
+color: white;
+background-color: black ;
+background-image: url(~@/assets/backgroundpaper.png);
+ background-position: 50% 0%;
+ background-size: cover;
+ height: 100%;
 }
 </style>

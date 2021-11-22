@@ -16,6 +16,16 @@ class Contentful {
             console.log(result.items);
             return result.items;
     }
+
+    async getSections(){
+        let result = await this.client
+            .getEntries({
+                content_type: "section",
+                order: 'fields.sectionNumber', 
+            });
+            console.log(result.items);
+            return result.items;
+    }
 }
 
 export default new Contentful();
