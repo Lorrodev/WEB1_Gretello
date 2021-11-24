@@ -39,6 +39,8 @@
       maxScroll = window.scrollMaxY;
 
       initCoords();
+
+      document.getElementById("loadingScreen").style.display = "none";
     }
 
     function doScroll(){
@@ -50,6 +52,6 @@
     }
 
     //Currently inititalizing the locomotive scroll with a timeout
-    setTimeout(init, 2000);
+    setTimeout(init, 1000);
   </script>
 </html>

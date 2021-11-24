@@ -1,5 +1,7 @@
 <template>
-    <div ref="container" class="map"></div>
+    <div id="mapContainer">
+        <div ref="container" class="map"></div>
+    </div>
 </template>
 
 <script>
@@ -11,9 +13,9 @@ export default{
         mapboxgl.accessToken = "pk.eyJ1IjoibG9ycm9kZXYiLCJhIjoiY2t2cXRmaGlqNmdqbDJxb2tueWJjbWkweSJ9.xlNyYEm9VW-7IN5HBzTFRw";
         this.map = new mapboxgl.Map({
             container: this.$refs.container,
-            style: "mapbox://styles/lorrodev/ckvqvgodf4wc414mmwgv6av5z",
+            style: "mapbox://styles/lorrodev/ckwdz2l462fmz14o8aboj5rw0",
             center: [8.304094, 47.051358],
-            zoom: 13.5
+            zoom: 13.4
         });
     },
     data: function(){
@@ -31,10 +33,26 @@ export default{
 
 <style scoped>
 .map {
+    top: 30%;
+    left: 30%;
+    height: 15vw;
+    width: 15vw;
+}
+
+#mapContainer{
     position: fixed;
-    top: 68%;
-    left: 2%;
-    height: 30%;
-    width: 30%;
+    z-index: 100;
+    background-image: url('~@/assets/zeitung-ripped.png');
+    width: 25vw;
+    height: 25vw;
+    left: -3%;
+    top: auto;
+    right: auto;
+    bottom: 3%;
+    background-size: contain;
+    overflow: hidden;
+    -webkit-transform: rotate(-6deg);
+    -ms-transform: rotate(-6deg);
+    transform: rotate(-6deg);
 }
 </style>

@@ -1,4 +1,5 @@
 <template>
+  <div id="loadingScreen"><br><br><br><br>...</div>
   <div class="scroll-wrapper" data-scroll-container>
     
     <div v-for="section in sections"
@@ -63,5 +64,15 @@ import Map from '@/components/Map.vue';
   padding-top: 100px;
   padding-bottom: 100px;
   background-color: transparent;
+}
+
+/* Loading screen for current workaround :D */
+#loadingScreen{
+  position: fixed;
+  z-index: 9001;
+  width: 100vw;
+  height: 100vh;
+  background-color: #111;
+  font-size: 100px;
 }
 </style>
