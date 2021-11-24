@@ -25,11 +25,6 @@
       </div>
     </div>
   </div>
-
-  This is a test
-  <p id="demo"></p>
-  <button @click="testFunc">Test</button><br>
-  <br>
   <Map/>
 </template>
 
@@ -51,9 +46,6 @@ import Map from '@/components/Map.vue';
         },
         created: async function(){
           this.sections = await contentful.getSections();
-        },
-        methods: {
-          testFunc: function(){alert("Test")}
         }
     }
 </script>

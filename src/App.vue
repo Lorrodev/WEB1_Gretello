@@ -44,4 +44,9 @@ background-image: url(~@/assets/backgroundpaper.png);
  background-size: cover;
  height: 100%;
 }
+
+.mapbox-logo{ display: none; }
+.mapboxgl-ctrl-logo { display: none !important; }
+.mapbox-improve-map { display: none; }
+.mapboxgl-ctrl-compass { display: none; }
 </style>

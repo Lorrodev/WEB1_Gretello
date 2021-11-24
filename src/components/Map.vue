@@ -9,12 +9,20 @@ export default{
     name: "Map",
     mounted: async function(){
         mapboxgl.accessToken = "pk.eyJ1IjoibG9ycm9kZXYiLCJhIjoiY2t2cXRmaGlqNmdqbDJxb2tueWJjbWkweSJ9.xlNyYEm9VW-7IN5HBzTFRw";
-        new mapboxgl.Map({
+        this.map = new mapboxgl.Map({
             container: this.$refs.container,
             style: "mapbox://styles/lorrodev/ckvqvgodf4wc414mmwgv6av5z",
-            center: [8.304369, 47.052349],
-            zoom: 15
+            center: [8.304094, 47.051358],
+            zoom: 13.5
         });
+    },
+    data: function(){
+        return {
+            map: this.map,
+        };
+    },
+    methods: {
+        testFunc: function(){alert("Test")}
     }
 }
 </script>

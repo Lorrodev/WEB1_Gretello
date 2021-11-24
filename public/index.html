@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.3/dist/locomotive-scroll.min.js"></script>
+    <script src="gpx-utilities.js"></script>
     <link rel="stylesheet" href="locoScroll.css">
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
@@ -17,14 +18,38 @@
     <!-- built files will be auto injected -->
   </body>
   <script>
-    function initScroll(){
-      const scroll = new LocomotiveScroll({
+    let scroll;
+    let currentScroll = 0;
+    let scrollFraction = 0;
+    let maxScroll = 0;
+    let coords = [];
+
+    function init(){
+      scroll = new LocomotiveScroll({
         el: document.querySelector("[data-scroll-container]"),
         smooth: true,
+        getSpeed: true,
+        getDirection: true 
       })
+
+      scroll.on("scroll", function(position){
+        currentScroll = position.delta.y
+        doScroll();
+      });
+      maxScroll = window.scrollMaxY;
+
+      initCoords();
+    }
+
+    function doScroll(){
+      scrollFraction = currentScroll/maxScroll;
+    }
+
+    async function initCoords(){
+      coords = await getCoordinatesFromGpxFile('WEB1_Map.gpx');
     }
 
     //Currently inititalizing the locomotive scroll with a timeout
-    setTimeout(initScroll, 2000);
+    setTimeout(init, 2000);
   </script>
 </html>

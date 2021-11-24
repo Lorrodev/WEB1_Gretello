@@ -13,7 +13,6 @@ class Contentful {
             .getEntries({
                 content_type: "snippet"        
             });
-            console.log(result.items);
             return result.items;
     }
 
@@ -23,7 +22,6 @@ class Contentful {
                 content_type: "section",
                 order: 'fields.sectionNumber', 
             });
-            console.log(result.items);
             return result.items;
     }
 }
