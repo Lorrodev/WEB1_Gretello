@@ -46,6 +46,7 @@ export default{
     left: 30%;
     height: 15vw;
     width: 15vw;
+    mix-blend-mode: exclusion;
 }
 
 #mapContainer{
