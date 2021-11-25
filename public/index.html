@@ -46,6 +46,14 @@
 
     function doScroll(){
       globalVars.scrollFraction = globalVars.currentScroll/globalVars.maxScroll;
+
+      if(globalVars.scrollFraction < 0.2){
+        let leftOffset = (-200*(0.2-globalVars.scrollFraction)-1);
+        console.log(leftOffset);
+        document.getElementById("mapContainer").style.left = leftOffset+"%";
+      }else{
+        document.getElementById("mapContainer").style.left = "-2%";
+      }
     }
 
     async function initCoords(){

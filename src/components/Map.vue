@@ -1,5 +1,5 @@
 <template>
-    <div id="mapContainer">
+    <div id="mapContainer" data-scroll>
         <div ref="container" class="map"></div>
     </div>
 </template>
@@ -54,7 +54,7 @@ export default{
     background-image: url('~@/assets/zeitung-ripped.png');
     width: 25vw;
     height: 25vw;
-    left: -3%;
+    left: -50%;
     top: auto;
     right: auto;
     bottom: 3%;
