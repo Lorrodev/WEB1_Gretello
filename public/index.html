@@ -52,6 +52,9 @@
       if(globalVars.scrollFraction < 0.2){
         let leftOffset = (-200*(0.2-globalVars.scrollFraction)-1);
         document.getElementById("mapContainer").style.left = leftOffset+"%";
+      }else if(globalVars.scrollFraction > 0.75){
+        let leftOffset = (-150*(globalVars.scrollFraction-0.75)-1);
+        document.getElementById("mapContainer").style.left = leftOffset+"%";
       }else{
         document.getElementById("mapContainer").style.left = "-2%";
       }
