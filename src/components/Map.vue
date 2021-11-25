@@ -23,7 +23,7 @@ export default{
     },
     methods: {
         moveCursor: function(){
-            let currentCoords = window.globalVars.coords[Math.floor(window.globalVars.scrollFraction * (window.globalVars.coords.length-180))];
+            let currentCoords = window.globalVars.coords[Math.floor(window.globalVars.scrollFraction * (window.globalVars.coords.length-190))];
 
             this.marker.setLngLat([currentCoords[0], currentCoords[1]])
             this.marker.addTo(this.map);
