@@ -75,4 +75,31 @@ import Map from '@/components/Map.vue';
   background-color: #111;
   font-size: 100px;
 }
+
+.scroll-wrapper{
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  z-index: 114;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  grid-auto-columns: 1fr;
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: auto auto;
+  grid-template-rows: auto auto;
+  background-color: #212222;
+  background-image: url('../assets/grain.gif');
+  background-position: 50% 50%;
+  background-size: auto;
+  opacity: 0.03;
+  -o-object-fit: fill;
+  object-fit: fill;
+
+}
 </style>
