@@ -17,7 +17,7 @@ export default{
         this.map = new mapboxgl.Map({
             container: this.$refs.container,
             style: "mapbox://styles/lorrodev/ckwdz2l462fmz14o8aboj5rw0",
-            center: [8.304094, 47.051358],
+            center: [8.306697, 47.051869],
             zoom: 13.4
         });
     },
