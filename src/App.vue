@@ -41,7 +41,7 @@ color: white;
 background-color: black ;
 background-image: url(~@/assets/backgroundpaper.png);
  background-position: 50% 0%;
- background-size: cover;
+ background-size: 100vw;
  height: 100%;
 }
 
