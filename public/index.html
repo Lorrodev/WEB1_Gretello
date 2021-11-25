@@ -42,21 +42,20 @@
       initCoords();
 
       document.getElementById("loadingScreen").style.display = "none";
+      doScroll();
     }
 
     function doScroll(){
       globalVars.scrollFraction = globalVars.currentScroll/globalVars.maxScroll;
 
-      //console.log(globalVars.currentScroll+" / "+globalVars.maxScroll+" = "+globalVars.scrollFraction);
-
-      if(globalVars.scrollFraction < 0.2){
-        let leftOffset = (-200*(0.2-globalVars.scrollFraction)-1);
-        document.getElementById("mapContainer").style.left = leftOffset+"%";
-      }else if(globalVars.scrollFraction > 0.75){
-        let leftOffset = (-150*(globalVars.scrollFraction-0.75)-1);
-        document.getElementById("mapContainer").style.left = leftOffset+"%";
-      }else{
-        document.getElementById("mapContainer").style.left = "-2%";
+      if(globalVars.scrollFraction > 0.1 && globalVars.scrollFraction < 0.8){
+        document.getElementById("mapContainer").style.animationName = 'showNewsPaper';
+        document.getElementById("mapContainer").style.animationDuration = '2s';
+        document.getElementById("mapContainer").style.left = '-3%';
+      }else if(globalVars.scrollFraction < 0.1 || globalVars.scrollFraction > 0.8){
+        document.getElementById("mapContainer").style.animationName = 'hideNewsPaper';
+        document.getElementById("mapContainer").style.animationDuration = '2s';
+        document.getElementById("mapContainer").style.left = '-50%';
       }
     }
 
@@ -68,3 +67,20 @@
     setTimeout(init, 1000);
   </script>
 </html>
+
+<style>
+  @keyframes showNewsPaper{
+    from {left: -50%}
+    to {left: -3%}
+  }
+
+  @keyframes hideNewsPaper{
+    from {left: -3%}
+    to {left: -50%}
+  }
+
+  #mapContainer{
+    animation-name: hideNewsPaper;
+    animation-duration: 0s;
+  }
+</style>
