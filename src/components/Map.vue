@@ -12,7 +12,7 @@ export default{
     mounted: async function(){
         mapboxgl.accessToken = "pk.eyJ1IjoibG9ycm9kZXYiLCJhIjoiY2t2cXRmaGlqNmdqbDJxb2tueWJjbWkweSJ9.xlNyYEm9VW-7IN5HBzTFRw";
         this.marker = new mapboxgl.Marker({
-            color: "#FFFFFF"
+            color: "#000000"
         });
         this.map = new mapboxgl.Map({
             container: this.$refs.container,
