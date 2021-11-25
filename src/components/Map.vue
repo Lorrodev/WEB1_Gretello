@@ -22,19 +22,17 @@ export default{
         });
     },
     methods: {
-        doSomething: function(){
+        moveCursor: function(){
             let currentCoords = window.globalVars.coords[Math.floor(window.globalVars.scrollFraction * (window.globalVars.coords.length-180))];
 
-            //console.log(currentCoords);
             this.marker.setLngLat([currentCoords[0], currentCoords[1]])
             this.marker.addTo(this.map);
-            //alert(window.globalVars.scrollFraction)
         }
     },
     created(){
        document.addEventListener('wheel', evt => 
        {
-          this.doSomething(evt);
+          this.moveCursor(evt);
        });
     }
 }
