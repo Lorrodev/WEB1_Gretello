@@ -18,11 +18,12 @@
     <!-- built files will be auto injected -->
   </body>
   <script>
-    let scroll;
-    let currentScroll = 0;
-    let scrollFraction = 0;
-    let maxScroll = 0;
-    let coords = [];
+    window.globalVars = {};
+    globalVars.scroll;
+    globalVars.currentScroll = 0;
+    globalVars.scrollFraction = 0;
+    globalVars.maxScroll = 0;
+    globalVars.coords = [];
 
     function init(){
       scroll = new LocomotiveScroll({
@@ -33,10 +34,10 @@
       })
 
       scroll.on("scroll", function(position){
-        currentScroll = position.delta.y
+        globalVars.currentScroll = position.delta.y
         doScroll();
       });
-      maxScroll = window.scrollMaxY;
+      globalVars.maxScroll = window.scrollMaxY;
 
       initCoords();
 
@@ -44,11 +45,11 @@
     }
 
     function doScroll(){
-      scrollFraction = currentScroll/maxScroll;
+      globalVars.scrollFraction = globalVars.currentScroll/globalVars.maxScroll;
     }
 
     async function initCoords(){
-      coords = await getCoordinatesFromGpxFile('WEB1_Map.gpx');
+      globalVars.coords = await getCoordinatesFromGpxFile('WEB1_Map.gpx');
     }
 
     //Currently inititalizing the locomotive scroll with a timeout

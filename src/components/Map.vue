@@ -11,6 +11,9 @@ export default{
     name: "Map",
     mounted: async function(){
         mapboxgl.accessToken = "pk.eyJ1IjoibG9ycm9kZXYiLCJhIjoiY2t2cXRmaGlqNmdqbDJxb2tueWJjbWkweSJ9.xlNyYEm9VW-7IN5HBzTFRw";
+        this.marker = new mapboxgl.Marker({
+            color: "#FFFFFF"
+        });
         this.map = new mapboxgl.Map({
             container: this.$refs.container,
             style: "mapbox://styles/lorrodev/ckwdz2l462fmz14o8aboj5rw0",
@@ -18,13 +21,21 @@ export default{
             zoom: 13.4
         });
     },
-    data: function(){
-        return {
-            map: this.map,
-        };
-    },
     methods: {
-        testFunc: function(){alert("Test")}
+        doSomething: function(){
+            let currentCoords = window.globalVars.coords[Math.floor(window.globalVars.scrollFraction * (window.globalVars.coords.length-180))];
+
+            //console.log(currentCoords);
+            this.marker.setLngLat([currentCoords[0], currentCoords[1]])
+            this.marker.addTo(this.map);
+            //alert(window.globalVars.scrollFraction)
+        }
+    },
+    created(){
+       document.addEventListener('wheel', evt => 
+       {
+          this.doSomething(evt);
+       });
     }
 }
 </script>
