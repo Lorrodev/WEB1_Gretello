@@ -4,6 +4,7 @@
     
     <div v-for="section in sections"
       :key="section.name"
+      :id="section.fields.name"
       class="section" data-scroll-section
     >
       <div  v-for="snippet in section.fields.snippets"
@@ -74,5 +75,9 @@ import Map from '@/components/Map.vue';
   height: 100vh;
   background-color: #111;
   font-size: 100px;
+}
+
+#emptySection0{
+  height: 80vh !important;
 }
 </style>
