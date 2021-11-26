@@ -1,5 +1,4 @@
 # WEB1_Gretello
-Studio WEB1 Project.
+Studio WEB1 Project
 
-halloooooooo
-Hoi
+Vivien Helbling, Mike Brechbühl, Samuel Herzog, Marc Zuber
